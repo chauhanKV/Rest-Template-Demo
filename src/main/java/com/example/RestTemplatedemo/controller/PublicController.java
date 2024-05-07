@@ -3,6 +3,7 @@ package com.example.RestTemplatedemo.controller;
 import com.example.RestTemplatedemo.DTO.Blog;
 import com.example.RestTemplatedemo.DTO.User;
 import com.fasterxml.jackson.databind.JsonNode;
+import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
@@ -50,6 +51,7 @@ public class PublicController {
         // Pass header to pass credentials
         MultiValueMap<String, String> headers = new HttpHeaders();
         headers.set("Authorization", "Basic bmFuZGFuOmhhY2s=");
+        headers.set("X-Request-Id", MDC.get("X-Request-Id"));
         HttpEntity<User> httpEntity = new HttpEntity(userData, headers);
         Long id = restTemplate.exchange(adminServiceURL, HttpMethod.POST, httpEntity,Long.class).getBody();
         return ResponseEntity.ok(id);

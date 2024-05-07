@@ -20,9 +20,9 @@ public class MDCRequestFilter extends HttpFilter {
     @Override
     public void doFilter(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, FilterChain filterChain) throws ServletException, IOException {
         LOGGER.info("Set MDC in MDCRequestFilter");
-        MDC.put("requestId", httpServletRequest.getHeader("requestId"));
+        MDC.put("X-Request-Id", httpServletRequest.getHeader("X-Request-Id"));
         filterChain.doFilter(httpServletRequest, httpServletResponse);
-        MDC.clear();
+        //MDC.clear();
         LOGGER.info("Processing in MDCRequestFilter before Sending response to the Client");
     }
 }
