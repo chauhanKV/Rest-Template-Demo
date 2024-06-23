@@ -1,0 +1,9 @@
+This project demonstrates :
+
+1. RestTemplate Demo
+2. Logging mechanisms
+3. Sending Request-id from one microservice to another microservice
+4. Way to store logs in an external file
+
+Reference from course repo:
+https://github.com/sksqr/JBDL-62/tree/main/L15-rest-template-demo
