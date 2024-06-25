@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configuration>
+<configuration debug="true">
 
-    <property name="LOGS" value="/tmp/logs" />
+    <property name="LOGS" value="src/main/resources/logs" />
+<!--    We can also provide absolute path of different directory if we do not want to store logs in this project structure.-->
 
     <appender name="Console"
               class="ch.qos.logback.core.ConsoleAppender">
